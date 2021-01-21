@@ -1,0 +1,22 @@
+<h1>Tous les restaurants</h1>
+<p>Découvrez l'ensemble des restaurants disponibles</p>
+
+<%= link_to 'Créer un restaurant', new_restaurant_path, class: "btn btn-primary" %>
+
+  <div class="row row-cols-md-3">
+    <% @restaurants.each do |restaurant| %>
+    <div class="col mb-4">
+      <div class="card" style="width: 18rem;">
+        <img src="https://source.unsplash.com/1600x900/?restaurant,food" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= restaurant.name %></h5>
+          <p class="card-text">Catégorie :<%= restaurant.category %></p>
+          <%= link_to 'Voir le restaurant', restaurant_path(restaurant), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
